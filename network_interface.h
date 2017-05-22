@@ -1,14 +1,18 @@
 #pragma once
 
-#include <string>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <sys/ioctl.h>
 #include <ifaddrs.h>
+
+#include <string>
 
 class NetworkInterface {
   public:
     // ----------------------- Type Definitions ----------------------
 
     // ----------------- Construction/Destruction --------------------
-    NetworkInterface(struct ifaddrs* address);
+    NetworkInterface(const struct ifaddrs* ifa);
 
     // ------------------------- Interface ---------------------------
     const std::string& getName() const;
@@ -22,7 +26,7 @@ class NetworkInterface {
     // ------------------------ Data Members -------------------------
 
     // The underlying network interface structure
-    struct ifaddrs* mIfp;
+    const struct ifaddrs* mIfp;
 
     // Interface name
     std::string mName;

@@ -25,7 +25,8 @@ class NetworkInterfaceList {
   private:
     // ------------------------- Interface ---------------------------
     void initialize();
-    void addInterfaceAddress(struct ifaddrs* address);
+    void addInterfaceAddress(const struct ifaddrs* ifa);
+    bool isLinkLayer(const struct ifaddrs* ifa) const;
 
     // ------------------------ Data Members -------------------------
     // The list of dynamically allocated interface addresses

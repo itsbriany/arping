@@ -1,7 +1,7 @@
 #include "network_interface.h"
 
-NetworkInterface::NetworkInterface(struct ifaddrs* address)
-  : mIfp(address)
+NetworkInterface::NetworkInterface(const struct ifaddrs* ifa)
+  : mIfp(ifa)
 {
   initialize();
 }
