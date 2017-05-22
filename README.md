@@ -1,2 +1,2 @@
-# arping
-ARP Ping
+# arptool
+An ARP utility tool
