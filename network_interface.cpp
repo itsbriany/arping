@@ -1,17 +1,9 @@
 #include "network_interface.h"
 
-NetworkInterface::NetworkInterface(const struct ifaddrs* ifa)
-  : mIfp(ifa)
+NetworkInterface::NetworkInterface()
 {
-  initialize();
 }
 
-const std::string& NetworkInterface::getName() const
+NetworkInterface::~NetworkInterface()
 {
-  return mName;
-}
-
-void NetworkInterface::initialize()
-{
-  mName = mIfp->ifa_name;
 }
